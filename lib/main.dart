@@ -1,6 +1,11 @@
-import 'package:flamolt/screens/homescreen.dart';
+
+import 'package:flamolt/screens/TournamentsScreen.dart';
+import 'package:flamolt/screens/communities_screen.dart';
+import 'package:flamolt/screens/community_screen.dart';
+import 'package:flamolt/screens/login_screen.dart';
 import 'package:flamolt/screens/onboardingscreen.dart';
 import 'package:flamolt/screens/profilepage.dart';
+import 'package:flamolt/screens/registrationscreen.dart';
 import 'package:flamolt/screens/streampage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -19,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.openSans().fontFamily,
       ),
-      home: const StreamPage(),
+      home: const CommunityScreen(),
     );
   }
 }

@@ -5,8 +5,8 @@ import 'package:flamolt/constants.dart';
 import 'package:flamolt/components/custom_outline.dart';
 import 'package:flutter/material.dart';
 
-class Onboardingscreen extends StatelessWidget {
-  const Onboardingscreen({super.key});
+class OnboardingScreen extends StatelessWidget {
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -132,6 +132,40 @@ class Onboardingscreen extends StatelessWidget {
               ),
               child: const Center(
                 child: Text('Sign Up',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Constants.kWhiteColor,
+                ),),
+              ),
+              ),
+              ),
+              CustomOutline(strokeWidth: 3, 
+              radius: 20,
+              padding: const EdgeInsets.all(3),
+              width: 160, 
+              height: 38,
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Constants.kPinkColor,
+                  Constants.kGreenColor,
+                ],
+              ), 
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Constants.kPinkColor.withOpacity(0.5),
+                  Constants.kGreenColor.withOpacity(0.5),
+                ],
+              ),
+              ),
+              child: const Center(
+                child: Text('Log In',
                 style: TextStyle(
                   fontSize: 14,
                   color: Constants.kWhiteColor,
