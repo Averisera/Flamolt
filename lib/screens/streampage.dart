@@ -44,8 +44,8 @@ class StreamPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 16,),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     SizedBox(width: 20,),
                     SizedBox(height: 35, child: Text('Watch Live', style: TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.bold),),),
                   ],
@@ -76,37 +76,37 @@ class StreamPage extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
                   children: [
-                    SizedBox(width: 15,),
+                    const SizedBox(width: 15,),
                     Column(children: [
                       Image.asset('assets/Valorant-logo.png', height: 60, width: 75,),
-                      SizedBox(height: 15, child: Text('Valorant', style: TextStyle(color: Colors.white),),)
+                      const SizedBox(height: 15, child: Text('Valorant', style: TextStyle(color: Colors.white),),)
                     ],),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Column(children: [
                       Image.asset('assets/Dota2-logo.png', height: 60, width: 75,),
-                      SizedBox(height: 15, child: Text('Dota2', style: TextStyle(color: Colors.white),),)
+                      const SizedBox(height: 15, child: Text('Dota2', style: TextStyle(color: Colors.white),),)
                     ],),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Column(children: [
                       Image.asset('assets/Pubg-logo.jfif', height: 60, width: 75,),
-                      SizedBox(height: 15, child: Text('PubG', style: TextStyle(color: Colors.white),),)
+                      const SizedBox(height: 15, child: Text('PubG', style: TextStyle(color: Colors.white),),)
                     ],),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Column(children: [
                       Image.asset('assets/Fortnite-logo.jfif', height: 60, width: 75,),
-                      SizedBox(height: 15, child: Text('Fortnite', style: TextStyle(color: Colors.white),),)
+                      const SizedBox(height: 15, child: Text('Fortnite', style: TextStyle(color: Colors.white),),)
                     ],),
-                    SizedBox(width: 5,),
+                    const SizedBox(width: 5,),
                     Column(children: [
                       Image.asset('assets/Overwatch-logo.jfif', height: 60, width: 75,),
-                      SizedBox(height: 15, child: Text('Overwatch', style: TextStyle(color: Colors.white),),)
+                      const SizedBox(height: 15, child: Text('Overwatch', style: TextStyle(color: Colors.white),),)
                     ],),
                   ],
                 ),
                 ),
                 const SizedBox(height: 20,),
-                Row(
-                  children: const [
+                const Row(
+                  children: [
                     SizedBox(width: 20,),
                     SizedBox(height: 35, child: Text('Top Streamers Live', style: TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.bold),),),
                   ],

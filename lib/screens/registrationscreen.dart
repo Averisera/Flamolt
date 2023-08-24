@@ -2,7 +2,6 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
 import '../components/custom_outline.dart';
 import '../constants.dart';
 
@@ -74,8 +73,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Image.asset('assets/flamolt_logo1.png'),),
                 SizedBox(height: screenHeight*0.01,),
                 SizedBox(height: screenHeight*0.3, width: screenWidth*0.8, 
-                child: Column(
-                  children: const [
+                child: const Column(
+                  children: [
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Name',
@@ -105,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               padding: const EdgeInsets.all(3),
               width: 180, 
               height: 50,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -135,7 +134,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
               ),
               SizedBox(height: screenHeight*0.24,),
-                Row(mainAxisAlignment: MainAxisAlignment.center,)
+                const Row(mainAxisAlignment: MainAxisAlignment.center,)
               ],
             ),),
             

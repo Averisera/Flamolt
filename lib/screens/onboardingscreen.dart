@@ -79,7 +79,7 @@ class OnboardingScreen extends StatelessWidget {
                   Constants.kGreenColor.withOpacity(0.1),
                   Constants.kGreenColor,
                 ],
-                stops: [0.2, 0.4, 0.6, 1]
+                stops: const [0.2, 0.4, 0.6, 1]
               ), 
               child: Container(
                 decoration: const BoxDecoration(
@@ -110,7 +110,7 @@ class OnboardingScreen extends StatelessWidget {
               padding: const EdgeInsets.all(3),
               width: 160, 
               height: 38,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -144,7 +144,7 @@ class OnboardingScreen extends StatelessWidget {
               padding: const EdgeInsets.all(3),
               width: 160, 
               height: 38,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -174,7 +174,7 @@ class OnboardingScreen extends StatelessWidget {
               ),
               ),
               const Spacer(),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
               )
               ],

@@ -1,14 +1,13 @@
 
-import 'package:flamolt/games.dart';
 import 'package:flutter/material.dart';
 
 class buildContainer extends StatelessWidget {
-  bool press1;
-  bool press2;
-  bool press3;
-  Function fx1;
-  Function fx2;
-  Function fx3;
+  final bool press1;
+  final bool press2;
+  final bool press3;
+  final Function fx1;
+  final Function fx2;
+  final Function fx3;
   buildContainer({super.key, required this.fx1, required this.fx2, required this.fx3, required this.press1, required this.press2, required this.press3});
 
   
@@ -24,27 +23,27 @@ class buildContainer extends StatelessWidget {
               SizedBox(width: screenWidth*0.33, height: 40, 
               child: TextButton(onPressed: () {
                 fx1();
-              }, child: Text('Games', style: TextStyle(color: Colors.white),))
+              }, child: const Text('Games', style: TextStyle(color: Colors.white),))
               ),
               SizedBox( height: 40,width: screenWidth*0.33, 
               child: TextButton(onPressed: () {
                 fx2();
               }, 
-              child: Text('Posts', style: TextStyle(color: Colors.white),))),
+              child: const Text('Posts', style: TextStyle(color: Colors.white),))),
               SizedBox( height: 40,width: screenWidth*0.33,
               child: TextButton(onPressed: () {
                 fx3();
               }, 
-                child: Text('About', style: TextStyle(color: Colors.white),))),
+                child: const Text('About', style: TextStyle(color: Colors.white),))),
               ],
               ),
                       
               if (press1==true)
-              Container(height: screenHeight*0.368,
+              SizedBox(height: screenHeight*0.368,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                   SizedBox(height: 80,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
@@ -57,13 +56,13 @@ class buildContainer extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,),
-                  SizedBox(height: 22, child: Text('Achievements (1)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
+                  const SizedBox(height: 22, child: Text('Achievements (1)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
+                  const SizedBox(height: 10,),
                   SizedBox(height: 42, child: Image.asset('assets/achievement_icon1.png', ),),
-                  SizedBox(height: 10,),
-                  SizedBox(height: 22, child: Text('Team (4)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
-                  SizedBox(height: 3.5,),
+                  const SizedBox(height: 10,),
+                  const SizedBox(height: 22, child: Text('Team (4)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
+                  const SizedBox(height: 3.5,),
                   SizedBox(height: 42,
                     child: ListView(
                       scrollDirection: Axis.horizontal,

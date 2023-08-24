@@ -70,7 +70,7 @@ class TournamentScreen extends StatelessWidget {
                       children: [
                         ShaderMask(
                           shaderCallback: (rect) {
-                          return LinearGradient(
+                          return const LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.black, Colors.transparent],
@@ -132,7 +132,7 @@ class TournamentScreen extends StatelessWidget {
                       children: [
                         ShaderMask(
                           shaderCallback: (rect) {
-                          return LinearGradient(
+                          return const LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.black, Colors.transparent],
@@ -194,7 +194,7 @@ class TournamentScreen extends StatelessWidget {
                       children: [
                         ShaderMask(
                           shaderCallback: (rect) {
-                          return LinearGradient(
+                          return const LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.black, Colors.transparent],
@@ -248,7 +248,7 @@ class TournamentScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.center,),
+                const Row(mainAxisAlignment: MainAxisAlignment.center,),
               ],
             ),)
           ],

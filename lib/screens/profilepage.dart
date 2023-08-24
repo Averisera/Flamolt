@@ -88,7 +88,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Constants.kGreenColor.withOpacity(0.1),
                   Constants.kGreenColor,
                 ],
-                stops: [0.2, 0.4, 0.6, 1]
+                stops: const [0.2, 0.4, 0.6, 1]
               ), 
               child: Container(
                 decoration: const BoxDecoration(
@@ -129,7 +129,7 @@ class _ProfilePageState extends State<ProfilePage> {
               
               
               
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
               )
               ],

@@ -2,7 +2,6 @@
 import 'package:flamolt/components/searchwidget1.dart';
 import 'package:flutter/material.dart';
 
-import '../components/searchwidget.dart';
 import '../constants.dart';
 
 class CommunitiesScreen extends StatelessWidget {
@@ -29,17 +28,17 @@ class CommunitiesScreen extends StatelessWidget {
               ),
             ),),
             SizedBox(height: screenHeight*0.05,),
-            SizedBox(height: screenHeight*0.04, child: Text('Your communities', style: TextStyle(color: Constants.kWhiteColor, fontSize: 22.5, fontWeight: FontWeight.bold),),),
+            SizedBox(height: screenHeight*0.04, child: const Text('Your communities', style: TextStyle(color: Constants.kWhiteColor, fontSize: 22.5, fontWeight: FontWeight.bold),),),
             SizedBox(height: screenHeight*0.01,),
             SizedBox(width: screenWidth*0.9,
-              child: Divider(color: Constants.kWhiteColor,)),
+              child: const Divider(color: Constants.kWhiteColor,)),
             // SizedBox(height: screenHeight*0.01,),
             SizedBox(height: screenHeight*0.32,
               child: ListView(
                 children: [
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -52,7 +51,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -65,7 +64,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -78,7 +77,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -91,7 +90,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -104,7 +103,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -117,7 +116,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -131,17 +130,17 @@ class CommunitiesScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight*0.05,),
-            SizedBox(height: screenHeight*0.04, child: Text('Top communities', style: TextStyle(color: Constants.kWhiteColor, fontSize: 22.5, fontWeight: FontWeight.bold),),),
+            SizedBox(height: screenHeight*0.04, child: const Text('Top communities', style: TextStyle(color: Constants.kWhiteColor, fontSize: 22.5, fontWeight: FontWeight.bold),),),
             SizedBox(height: screenHeight*0.01,),
             SizedBox(width: screenWidth*0.9,
-              child: Divider(color: Constants.kWhiteColor,)),
+              child: const Divider(color: Constants.kWhiteColor,)),
             // SizedBox(height: screenHeight*0.01,),
             SizedBox(height: screenHeight*0.27,
               child: ListView(
                 children: [
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -154,7 +153,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -167,7 +166,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -180,7 +179,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -193,7 +192,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -206,7 +205,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),
@@ -219,7 +218,7 @@ class CommunitiesScreen extends StatelessWidget {
                   SizedBox(height: screenHeight*0.01,),
                   Center(
                     child: Container(height: screenHeight*0.05, width: screenWidth*0.88,
-                      color: Color.fromARGB(255, 56, 56, 71),
+                      color: const Color.fromARGB(255, 56, 56, 71),
                       child: Row(
                         children: [
                           Image.asset('assets/Valorant-logo.png', height: screenHeight*0.04,),

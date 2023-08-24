@@ -68,8 +68,8 @@ class LoginScreen extends StatelessWidget {
                 child: Image.asset('assets/flamolt_logo1.png'),),
                 SizedBox(height: screenHeight*0.01,),
                 SizedBox(height: screenHeight*0.2, width: screenWidth*0.8, 
-                child: Column(
-                  children: const [
+                child: const Column(
+                  children: [
                     TextField(
                       decoration: InputDecoration(
                         labelText: 'Email Address',
@@ -93,7 +93,7 @@ class LoginScreen extends StatelessWidget {
               padding: const EdgeInsets.all(3),
               width: 180, 
               height: 50,
-              gradient: LinearGradient(
+              gradient: const LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
@@ -123,7 +123,7 @@ class LoginScreen extends StatelessWidget {
               ),
               ),
               SizedBox(height: screenHeight*0.34,),
-                Row(mainAxisAlignment: MainAxisAlignment.center,)
+                const Row(mainAxisAlignment: MainAxisAlignment.center,)
               ],
             ),),
             
