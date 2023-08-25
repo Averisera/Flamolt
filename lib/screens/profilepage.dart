@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../components/bottomnavigationbar.dart';
 import '../components/buildcontainer.dart';
 import '../components/custom_outline.dart';
 import '../constants.dart';
@@ -116,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
               Stack(
                 children:[
                   Container(
-                  height: screenHeight*0.506,
+                  height: screenHeight*0.42,
                   decoration: const BoxDecoration(
                     color: Colors.black45,
                     borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -136,6 +137,8 @@ class _ProfilePageState extends State<ProfilePage> {
             )
           )
         ]
-    )));
+    )),
+    bottomNavigationBar: BottomNavBar(),
+    );
   }
 }

@@ -1,7 +1,13 @@
 
+import 'package:flamolt/screens/TournamentsScreen.dart';
+import 'package:flamolt/screens/communities_screen.dart';
 import 'package:flamolt/screens/community_screen.dart';
+import 'package:flamolt/screens/profilepage.dart';
+import 'package:flamolt/screens/streampage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'components/route_generator.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -17,7 +23,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.openSans().fontFamily,
       ),
-      home: const CommunityScreen(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

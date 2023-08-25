@@ -1,4 +1,5 @@
 
+import 'package:flamolt/components/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 class buildContainer extends StatelessWidget {
@@ -39,7 +40,7 @@ class buildContainer extends StatelessWidget {
               ),
                       
               if (press1==true)
-              SizedBox(height: screenHeight*0.368,
+              SizedBox(height: screenHeight*0.35,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,14 +57,14 @@ class buildContainer extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 10,),
+                  const SizedBox(height: 3.5,),
                   const SizedBox(height: 22, child: Text('Achievements (1)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
-                  const SizedBox(height: 10,),
+                  const SizedBox(height: 4,),
                   SizedBox(height: 42, child: Image.asset('assets/achievement_icon1.png', ),),
-                  const SizedBox(height: 10,),
+                  const SizedBox(height: 4,),
                   const SizedBox(height: 22, child: Text('Team (4)', style: TextStyle(color: Colors.white, fontSize: 17, fontWeight: FontWeight.w700), textAlign: TextAlign.left,),),
                   const SizedBox(height: 3.5,),
-                  SizedBox(height: 42,
+                  SizedBox(height: 40,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
@@ -75,13 +76,15 @@ class buildContainer extends StatelessWidget {
                       ],
                     ),
                   ),
+                  const SizedBox(height: 8,),
+                  // BottomNavBar(),
                 ],
               ),
               )
               else if (press2==true)
-              Container(height: screenHeight*0.368, color: Colors.white,)
+              Container(height: screenHeight*0.35, color: Colors.white,)
               else if (press3==true)
-              Container(height: screenHeight*0.368, color: Colors.green,),
+              Container(height: screenHeight*0.35, color: Colors.green,),
           ],
     );
   }

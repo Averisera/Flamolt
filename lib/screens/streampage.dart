@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 
+import 'package:flamolt/components/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 import '../components/searchwidget.dart';
@@ -14,6 +15,7 @@ class StreamPage extends StatelessWidget {
     final screenHeight=MediaQuery.of(context).size.height;
     final screenWidth=MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: Colors.black,
       extendBody: true,
       body: SizedBox(
@@ -111,8 +113,8 @@ class StreamPage extends StatelessWidget {
                     SizedBox(height: 35, child: Text('Top Streamers Live', style: TextStyle(fontSize: 24, color: Colors.white,fontWeight: FontWeight.bold),),),
                   ],
                 ),
-                const SizedBox(height: 15,),
-                SizedBox(height: 180, child: 
+                const SizedBox(height: 8.2,),
+                SizedBox(height: screenHeight*0.24, child: 
                     ListView(
                       scrollDirection: Axis.horizontal,
                       shrinkWrap: true,
@@ -124,12 +126,14 @@ class StreamPage extends StatelessWidget {
                         Image.asset('assets/topstream4.png', height: 180, width: 260,),
                       ],
                 ), ),
+                
               ],
             )
           )
           ]
         )
-      )
+      ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

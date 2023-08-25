@@ -105,73 +105,79 @@ class OnboardingScreen extends StatelessWidget {
               SizedBox(
                 height: screenHeight*0.03,
               ),
-              CustomOutline(strokeWidth: 3, 
-              radius: 20,
-              padding: const EdgeInsets.all(3),
-              width: 160, 
-              height: 38,
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Constants.kPinkColor,
-                  Constants.kGreenColor,
-                ],
-              ), 
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Constants.kPinkColor.withOpacity(0.5),
-                  Constants.kGreenColor.withOpacity(0.5),
-                ],
+              GestureDetector(
+                onTap: (() => Navigator.of(context).pushNamed('/register')),
+                child: CustomOutline(strokeWidth: 3, 
+                radius: 20,
+                padding: const EdgeInsets.all(3),
+                width: 160, 
+                height: 38,
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Constants.kPinkColor,
+                    Constants.kGreenColor,
+                  ],
+                ), 
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Constants.kPinkColor.withOpacity(0.5),
+                    Constants.kGreenColor.withOpacity(0.5),
+                  ],
+                ),
+                ),
+                child: const Center(
+                  child: Text('Sign Up',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Constants.kWhiteColor,
+                  ),),
+                ),
+                ),
+                ),
               ),
-              ),
-              child: const Center(
-                child: Text('Sign Up',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Constants.kWhiteColor,
-                ),),
-              ),
-              ),
-              ),
-              CustomOutline(strokeWidth: 3, 
-              radius: 20,
-              padding: const EdgeInsets.all(3),
-              width: 160, 
-              height: 38,
-              gradient: const LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Constants.kPinkColor,
-                  Constants.kGreenColor,
-                ],
-              ), 
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  Constants.kPinkColor.withOpacity(0.5),
-                  Constants.kGreenColor.withOpacity(0.5),
-                ],
-              ),
-              ),
-              child: const Center(
-                child: Text('Log In',
-                style: TextStyle(
-                  fontSize: 14,
-                  color: Constants.kWhiteColor,
-                ),),
-              ),
-              ),
+              GestureDetector(
+                onTap: (() => Navigator.of(context).pushNamed('/login')),
+                child: CustomOutline(strokeWidth: 3, 
+                radius: 20,
+                padding: const EdgeInsets.all(3),
+                width: 160, 
+                height: 38,
+                gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Constants.kPinkColor,
+                    Constants.kGreenColor,
+                  ],
+                ), 
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Constants.kPinkColor.withOpacity(0.5),
+                    Constants.kGreenColor.withOpacity(0.5),
+                  ],
+                ),
+                ),
+                child: const Center(
+                  child: Text('Log In',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Constants.kWhiteColor,
+                  ),),
+                ),
+                ),
+                ),
               ),
               const Spacer(),
               const Row(

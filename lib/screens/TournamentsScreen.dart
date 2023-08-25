@@ -1,6 +1,7 @@
 
 import 'dart:ui';
 
+import 'package:flamolt/components/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -248,12 +249,16 @@ class TournamentScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                
                 const Row(mainAxisAlignment: MainAxisAlignment.center,),
               ],
-            ),)
+            ),),
+            
+            
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
