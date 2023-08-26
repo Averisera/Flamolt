@@ -1,5 +1,6 @@
 
 import 'dart:ui';
+import 'package:flamolt/resources/auth_methods.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../components/custom_outline.dart';
@@ -13,11 +14,15 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final TextEditingController _emailController= TextEditingController();
+  final TextEditingController _usernameController= TextEditingController();
+  final TextEditingController _passwordController= TextEditingController();
   @override
   Widget build(BuildContext context) {
     final screenHeight=MediaQuery.of(context).size.height;
     final screenWidth=MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Constants.kBlackColor,
       extendBody: true,
       body: SizedBox(
@@ -73,24 +78,27 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Image.asset('assets/flamolt_logo1.png'),),
                 SizedBox(height: screenHeight*0.01,),
                 SizedBox(height: screenHeight*0.3, width: screenWidth*0.8, 
-                child: const Column(
+                child: Column(
                   children: [
                     TextField(
-                      decoration: InputDecoration(
+                      controller: _usernameController,
+                      decoration: const InputDecoration(
                         labelText: 'Name',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
                         suffixIcon: Icon(CupertinoIcons.person, color: Constants.kWhiteColor,),
                         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Constants.kWhiteColor))
                         ),),
                     TextField(
-                      decoration: InputDecoration(
+                      controller: _emailController,
+                      decoration: const InputDecoration(
                         labelText: 'Email Address',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
                         suffixIcon: Icon(CupertinoIcons.envelope, color: Constants.kWhiteColor,),
                         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Constants.kWhiteColor))
                         ),),
                     TextField(
-                      decoration: InputDecoration(
+                      controller: _passwordController,
+                      decoration: const InputDecoration(
                         labelText: 'Password',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
                         suffixIcon: Icon(CupertinoIcons.eye_slash, color: Constants.kWhiteColor,),
@@ -100,7 +108,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),),
                 SizedBox(height: screenHeight*0.04,),
               GestureDetector(
-                onTap: (() => Navigator.of(context).pushNamed('/login')),
+                onTap: (() async {
+                  String res1= await AuthMethods().signUpUser(username: _usernameController.text, email: _emailController.text, password: _passwordController.text);
+                  if(res1=='success'){
+                    Navigator.of(context).pushNamed('/login');
+                  }
+                } ),
                 child: CustomOutline(strokeWidth: 3, 
                 radius: 20,
                 padding: const EdgeInsets.all(3),

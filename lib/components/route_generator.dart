@@ -1,4 +1,4 @@
-import 'package:flamolt/main.dart';
+
 import 'package:flamolt/screens/TournamentsScreen.dart';
 import 'package:flamolt/screens/communities_screen.dart';
 import 'package:flamolt/screens/community_screen.dart';

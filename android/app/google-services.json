@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "862081598394",
+    "project_id": "flamolt-4993d",
+    "storage_bucket": "flamolt-4993d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862081598394:android:9c7fe11f7f1adeed7bd383",
+        "android_client_info": {
+          "package_name": "com.flamolt.flamolt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862081598394-s5lqjm912d7hbirunuk5vn3jb6kqu233.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0g5RBUQmsoti1lljkjVBWTkP2W3avUmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862081598394-s5lqjm912d7hbirunuk5vn3jb6kqu233.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
