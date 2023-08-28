@@ -1,5 +1,8 @@
 
 import 'package:flamolt/screens/TournamentsScreen.dart';
+import 'package:flamolt/screens/add_live.dart';
+import 'package:flamolt/screens/add_post.dart';
+import 'package:flamolt/screens/add_post_or_live.dart';
 import 'package:flamolt/screens/communities_screen.dart';
 import 'package:flamolt/screens/community_screen.dart';
 import 'package:flamolt/screens/login_screen.dart';
@@ -29,6 +32,12 @@ class RouteGenerator{
       return MaterialPageRoute(builder: (_) => CommunityScreen());
       case '/tournaments':
       return MaterialPageRoute(builder: (_) => TournamentScreen());
+      case '/addpost' :
+      return MaterialPageRoute(builder: (_) => AddPostScreen());
+      case '/addlive' :
+      return MaterialPageRoute(builder: (_) => AddLiveScreen());
+      case '/addpostOrLive' :
+      return MaterialPageRoute(builder: (_) => AddPostOrLiveScreen());
       default:
       return MaterialPageRoute(builder: (_) => OnboardingScreen());
     }

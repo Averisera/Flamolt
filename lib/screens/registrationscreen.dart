@@ -18,6 +18,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _usernameController= TextEditingController();
   final TextEditingController _passwordController= TextEditingController();
   @override
+  void dispose(){
+    super.dispose();
+    _emailController.dispose();
+    _usernameController.dispose();
+    _passwordController.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     final screenHeight=MediaQuery.of(context).size.height;
     final screenWidth=MediaQuery.of(context).size.width;
@@ -82,6 +89,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   children: [
                     TextField(
                       controller: _usernameController,
+                      style: const TextStyle(color: Constants.kWhiteColor),
                       decoration: const InputDecoration(
                         labelText: 'Name',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
@@ -90,6 +98,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),),
                     TextField(
                       controller: _emailController,
+                      style: const TextStyle(color: Constants.kWhiteColor),
                       decoration: const InputDecoration(
                         labelText: 'Email Address',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
@@ -98,6 +107,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ),),
                     TextField(
                       controller: _passwordController,
+                      style: const TextStyle(color: Constants.kWhiteColor),
                       decoration: const InputDecoration(
                         labelText: 'Password',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),

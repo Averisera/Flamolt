@@ -1,5 +1,6 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class buildContainer extends StatelessWidget {
@@ -82,7 +83,24 @@ class buildContainer extends StatelessWidget {
               ),
               )
               else if (press2==true)
-              Container(height: screenHeight*0.35, color: Colors.white,)
+              StreamBuilder(stream: FirebaseFirestore.instance.collection('posts').snapshots(), builder: (context, AsyncSnapshot<QuerySnapshot<Map<String,dynamic>>> snapshot){
+                if(snapshot.connectionState == ConnectionState.waiting){
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+                return SizedBox(height: screenHeight*0.35,
+                  child: GridView.builder(
+                    itemCount: snapshot.data!.docs.length,
+                    gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      childAspectRatio: 1,
+                    ),
+                    itemBuilder: (context, index) => SizedBox(
+                  child: Image.network(snapshot.data!.docs[index].data()['postUrl']),)),
+                );
+              }
+              )
               else if (press3==true)
               Container(height: screenHeight*0.35, color: Colors.green,),
           ],

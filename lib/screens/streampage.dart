@@ -3,12 +3,31 @@ import 'dart:ui';
 
 import 'package:flamolt/components/bottomnavigationbar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../components/searchwidget.dart';
 import '../constants.dart';
+import '../providers/user_provider.dart';
 
-class StreamPage extends StatelessWidget {
+class StreamPage extends StatefulWidget {
   const StreamPage({super.key});
+
+  @override
+  State<StreamPage> createState() => _StreamPageState();
+}
+
+class _StreamPageState extends State<StreamPage> {
+  addData() async {
+    UserProvider _userProvider = Provider.of(context, listen: false);
+    await _userProvider.refreshUser();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    addData();
+  }
 
   @override
   Widget build(BuildContext context) {

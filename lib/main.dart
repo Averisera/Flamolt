@@ -1,5 +1,7 @@
 
+import 'package:flamolt/providers/user_provider.dart';
 import 'package:flamolt/screens/TournamentsScreen.dart';
+import 'package:flamolt/screens/add_post_or_live.dart';
 import 'package:flamolt/screens/communities_screen.dart';
 import 'package:flamolt/screens/community_screen.dart';
 import 'package:flamolt/screens/profilepage.dart';
@@ -7,6 +9,7 @@ import 'package:flamolt/screens/streampage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
 import 'components/route_generator.dart';
 void main() async {
@@ -20,14 +23,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: GoogleFonts.openSans().fontFamily,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider(),)
+      ],
+      child: MaterialApp(
+        title: 'Flutter demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          fontFamily: GoogleFonts.openSans().fontFamily,
+        ),
+
+        initialRoute: '/',
+        onGenerateRoute: RouteGenerator.generateRoute,
       ),
-      initialRoute: '/',
-      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }

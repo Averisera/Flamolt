@@ -1,7 +1,11 @@
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flamolt/providers/user_provider.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:flamolt/components/user.dart' as model;
 import '../components/bottomnavigationbar.dart';
 import '../components/buildcontainer.dart';
 import '../components/custom_outline.dart';
@@ -14,9 +18,18 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-    bool Pressed1=true;
-    bool Pressed2=false;
-    bool Pressed3=false;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUsername();
+  }
+  String username='';
+  bool Pressed1=true;
+  bool Pressed2=false;
+  bool Pressed3=false;
+  
+  
   void updatePressed1(){
     setState(() {
       Pressed1= true;
@@ -40,7 +53,7 @@ class _ProfilePageState extends State<ProfilePage> {
   }
   @override
   Widget build(BuildContext context) {
-    
+    final model.User user= Provider.of<UserProvider>(context).getUser;
     final screenHeight=MediaQuery.of(context).size.height;
     final screenWidth=MediaQuery.of(context).size.width;
     return Scaffold(
@@ -104,7 +117,7 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(
                 height: screenHeight*0.03,
               ),
-              Text('AVERISERA',
+              Text(user.username,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Constants.kWhiteColor,
@@ -141,4 +154,14 @@ class _ProfilePageState extends State<ProfilePage> {
     bottomNavigationBar: BottomNavBar(),
     );
   }
+  
+  void getUsername() async {
+    
+    DocumentSnapshot snap= await FirebaseFirestore.instance.collection('users').doc(FirebaseAuth.instance.currentUser!.uid).get();
+    setState(() {
+      username=(snap.data() as Map<String,dynamic>)['username'];
+    });
+  }
+  
+  
 }

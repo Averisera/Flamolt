@@ -3,10 +3,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../components/custom_outline.dart';
 import '../constants.dart';
+import '../resources/auth_methods.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _emailController= TextEditingController();
+  final TextEditingController _passwordController= TextEditingController();
+  @override
+  void dispose(){
+    super.dispose();
+    _emailController.dispose();
+    _passwordController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final screenHeight=MediaQuery.of(context).size.height;
@@ -68,18 +82,21 @@ class LoginScreen extends StatelessWidget {
                 child: Image.asset('assets/flamolt_logo1.png'),),
                 SizedBox(height: screenHeight*0.01,),
                 SizedBox(height: screenHeight*0.2, width: screenWidth*0.8, 
-                child: const Column(
+                child: Column(
                   children: [
                     TextField(
-                      decoration: InputDecoration(
+                      controller: _emailController,
+                      style: const TextStyle(color: Constants.kWhiteColor),
+                      decoration: const InputDecoration(
                         labelText: 'Email Address',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
                         suffixIcon: Icon(CupertinoIcons.envelope, color: Constants.kWhiteColor,),
                         enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Constants.kWhiteColor))
                         ),),
                     TextField(
-                      style: TextStyle(color: Constants.kWhiteColor),
-                      decoration: InputDecoration(
+                      controller: _passwordController,
+                      style: const TextStyle(color: Constants.kWhiteColor),
+                      decoration: const InputDecoration(
                         labelText: 'Password',
                         labelStyle: TextStyle(color: Constants.kWhiteColor),
                         suffixIcon: Icon(CupertinoIcons.eye_slash, color: Constants.kWhiteColor,),
@@ -89,7 +106,12 @@ class LoginScreen extends StatelessWidget {
                 ),),
                 SizedBox(height: screenHeight*0.04,),
               GestureDetector(
-                onTap: (() => Navigator.of(context).pushNamed('/stream')),
+                onTap: () async { 
+                  String res1= await AuthMethods().logInUser(email: _emailController.text, password: _passwordController.text);
+                  if (res1=='success'){
+                    Navigator.of(context).pushNamed('/stream');
+                  }
+                },
                 child: CustomOutline(strokeWidth: 3, 
                 radius: 20,
                 padding: const EdgeInsets.all(3),

@@ -1,6 +1,7 @@
 import 'package:flamolt/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
@@ -20,7 +21,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     case 1 :
     Navigator.of(context).pushNamed('/communities');
     case 2:
-    Navigator.of(context).pushNamed('/stream');
+    
+    Navigator.of(context).pushNamed('/addpostOrLive');
     case 3:
     Navigator.of(context).pushNamed('/tournaments');
     case 4:
