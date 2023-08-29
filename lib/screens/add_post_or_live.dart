@@ -27,7 +27,7 @@ class _AddPostOrLiveScreenState extends State<AddPostOrLiveScreen> {
   void goLiveStream() async {
     String channelId= await FirestoreMethods().startLiveStream(_titleController.text, _file, context);
     if(channelId.isNotEmpty){
-      Navigator.of(context).pushNamed('/addlive');
+      Navigator.of(context).pushNamed('/addlive', arguments: channelId);
     }
   }
   @override

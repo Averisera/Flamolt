@@ -22,13 +22,13 @@ class LiveStream{
   static LiveStream fromSnap(DocumentSnapshot snap){
     var snapshot=snap.data() as Map<String,dynamic>;
     return LiveStream(
-      uid: snapshot['uid'], 
-      image: snapshot['image'], 
-      startedAt: snapshot['startedAt'], 
-      viewers: snapshot['viewers'], 
-      username: snapshot['username'], 
-      channelId: snapshot['channelId'],
-      title: snapshot['title']
+      uid: snapshot['uid'] ?? '', 
+      image: snapshot['image'] ?? '', 
+      startedAt: snapshot['startedAt'] ?? '', 
+      viewers: snapshot['viewers'] ?? '', 
+      username: snapshot['username'] ?? '', 
+      channelId: snapshot['channelId']?? '',
+      title: snapshot['title']?? ''
     );
   }
 }

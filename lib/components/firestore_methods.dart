@@ -56,4 +56,41 @@ class FirestoreMethods {
     }
     return res;
   }
+  Future<void> endLiveStream(String channelId) async {
+    try{
+      QuerySnapshot snap= await _firestore.collection('livestream').doc(channelId).collection('comments').get();
+      for(int i=0; i<snap.docs.length; i++){
+        await _firestore.collection('livestream').doc(channelId).collection('comments').doc((snap.docs[i].data()! as dynamic)['commentId']).delete();
+      }
+      await _firestore.collection('livestream').doc(channelId).delete();
+    }
+    catch(e){
+      debugPrint(e.toString());
+    }
+  }
+
+  Future<void> updateViewCount(bool isIncrease, String id) async {
+    try{
+      await _firestore.collection('livestream').doc(id).update({
+        'viewers': FieldValue.increment(isIncrease? 1:-1)
+      });
+    }
+    catch(e){}
+  }
+  Future<void> chat(String text, String id, BuildContext context) async {
+    final user= Provider.of<UserProvider>(context, listen: false);
+    try{
+      String commentId = const Uuid().v1();
+      await _firestore.collection('livestream').doc(id).collection('comments').doc(commentId).set({
+        'username': user.getUser.username,
+        'message': text,
+        'uid': user.getUser.uid,
+        'createdAt': DateTime.now(),
+        'commentId':commentId
+      });
+    }
+    on FirebaseException catch(e){
+      showSnackBar(e.message!, context);
+    }
+  }
 }

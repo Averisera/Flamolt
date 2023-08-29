@@ -1,7 +1,10 @@
 
 import 'dart:ui';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flamolt/components/bottomnavigationbar.dart';
+import 'package:flamolt/components/livestream.dart';
+import 'package:flamolt/screens/add_live.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -81,16 +84,28 @@ class _StreamPageState extends State<StreamPage> {
                 ),
                 const SizedBox(height: 19,),
                 SizedBox(height: 160, child: 
-                    ListView(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      children: [
-                        const SizedBox(width: 20,),
-                        Image.asset('assets/stream1.png', height: 160, width: 280,),
-                        Image.asset('assets/stream2.png', height: 160, width: 280,),
-                        Image.asset('assets/stream3.png', height: 160, width: 280,),
-                      ],
-                ), ),
+                StreamBuilder<dynamic>(
+                  stream: FirebaseFirestore.instance.collection('livestream').snapshots(), 
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState==ConnectionState.waiting){
+                      return CircularProgressIndicator();
+                    }
+                    return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: snapshot.data.docs.length,
+                    itemBuilder: (context, index) {
+                      LiveStream post= LiveStream.fromSnap(snapshot.data.docs[index]);
+                      return InkWell(
+                        onTap: () async {
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddLiveScreen(isBroadcasting: false, channelId: post.channelId)));
+                        },
+                        child: Container(child: Image.network(post.image),),
+                      );
+                    },
+                  );
+                  }
+                ) 
+                ),
                 const SizedBox(height: 20,),
                 SizedBox(height: 75, 
                 child: ListView(

@@ -26,4 +26,5 @@ class Constants {
   static const String kMaskLastIndex = 'assets/mask/mask_lastIndex.png';
   static const String kMaskCenter = 'assets/mask/mask.png';
   static const String kMaskCast = 'assets/mask/mask_cast.png';
+  static const String tokenId='007eJxTYNgtmjyzZaX2LdM3HzZPPK31YYa+w6IVV975/tipvMMt89tqBQYzY1NLi2RDQ7OUJBMTM8vURNNUo2QjC6M0A+NkQzPD1Lk73qY0BDIyLP92jJmRAQJBfC6GktTiksy8dEMjYwYGACKtJWg=';
 }

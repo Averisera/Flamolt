@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 
 class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
-    final args= settings.arguments;
+    final String args= settings.arguments.toString();
     switch(settings.name) {
       case '/':
       return MaterialPageRoute(builder: (_) => OnboardingScreen());
@@ -35,7 +35,7 @@ class RouteGenerator{
       case '/addpost' :
       return MaterialPageRoute(builder: (_) => AddPostScreen());
       case '/addlive' :
-      return MaterialPageRoute(builder: (_) => AddLiveScreen());
+      return MaterialPageRoute(builder: (_) => AddLiveScreen(isBroadcasting: true, channelId: args,));
       case '/addpostOrLive' :
       return MaterialPageRoute(builder: (_) => AddPostOrLiveScreen());
       default:
